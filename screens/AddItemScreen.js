@@ -66,19 +66,17 @@ export default class AddItemScreen extends Component {
                   })
               }
           );
+          console.warn(response);
           let data = await response.json();
-          this.setState({});
+          console.warn(data);
           ToastAndroid.showWithGravity(
             'Expense Added',
             ToastAndroid.LONG,
             ToastAndroid.CENTER,
           );
-          // Alert.alert('Expense Added', [{text: 'Ok', onPress: () => {
-            
-          //   this.props.navigation.navigate('Overview');
-          // }}]);
       } catch(error) {
-          console.warn(error);
+          console.warn('Error in addExpense()');
+          console.warn(JSON.stringify(error));
       }
   } 
 

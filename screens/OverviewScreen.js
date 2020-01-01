@@ -36,6 +36,8 @@ export default class OverviewScreen extends Component {
             )
           }
           keyExtractor={(item, index) => index.toString()}
+          onRefresh={() => this.getOverview(1)}
+          refreshing={!this.state.loaded}
           />
         )  
     } else {
