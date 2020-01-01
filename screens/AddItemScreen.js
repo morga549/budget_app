@@ -42,7 +42,7 @@ export default class AddItemScreen extends Component {
       this.setState({categories: data.map(element => {return element.category_name}).sort()});
       }
       catch(error) {
-        console.warn('Error in getBudgetCategories(): \n', error);
+        console.warn(error);
       }
     }
 
@@ -66,17 +66,14 @@ export default class AddItemScreen extends Component {
                   })
               }
           );
-          console.warn(response);
           let data = await response.json();
-          console.warn(data);
           ToastAndroid.showWithGravity(
             'Expense Added',
             ToastAndroid.LONG,
             ToastAndroid.CENTER,
           );
       } catch(error) {
-          console.warn('Error in addExpense()');
-          console.warn(JSON.stringify(error));
+          console.warn(error);
       }
   } 
 
